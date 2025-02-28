@@ -20,7 +20,11 @@ while (isPowerOn && !isEmergencyLightOn)
     	Console.WriteLine("pls give a correct weight");
     	continue;
     }
-    if ((package == "metal" || package == "plastic") && (weight < 2.0 && weight > 0.0))
+    if (weight < 0.0) {
+        Console.WriteLine("emergency light on");
+        isEmergencyLightOn = true;
+    }
+    else if ((package == "metal" || package == "plastic") && (weight < 2.0))
     {
         Console.WriteLine("Package going to section A");
     }
